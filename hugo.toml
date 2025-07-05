@@ -1,4 +1,62 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'Luiz Ferreira - lizfer'
-theme = 'jughead'
+baseURL = "https://lizfer.social"
+languageCode = "en"
+title = "Luiz Ferreira - lizfer.social"
+copyright = "© Luiz Ferreira - lizfer.social"
+enableGitInfo = true
+
+# Code Highlight
+pygmentsstyle = "monokai"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
+[pagination]
+pagerSize = 10
+
+[params]
+# Add a logo to your site by placing an image in the assets directory
+# and setting the path here. Preferably a square png image.
+logo = "images/lizfer.png"
+
+# Choose a colour scheme from one of the Pico CSS colurs.
+colourScheme = "blue"
+
+# Turn on offline caching with a service worker and cache all pages.
+serviceWorker = "precache"
+# Or cache pages on-demand.
+# serviceWorker = true
+
+# Add a subtitle on the home page.
+subtitle = "Minimal and Clean [blog theme for Hugo](https://github.com/ananthb/jughead)"
+
+# Site GitHub Repository slig
+# If enableGitInfo is true, this will add a link to the source code of the site.
+siteRepo = "your-github-org/your-site-repo"
+
+# JSON Resume Registry slug
+# Or create a resume.json file in the data directory.
+jsonResumeRegistrySlug = "l1zfer"
+
+# Comments
+# Get these values by filling out the form on https://giscus.app
+[params.giscus]
+repo = "your-github-org/your-comments-repo"
+repoID = "your-github-repo-id"
+category = "your-announcement-category"
+categoryID = "your-announcement-category-id"
+
+# Social Tags
+[[params.social]]
+name = "GitHub"
+icon = "github"
+url = "https://github.com/l1zfer"
+
+[[params.social]]
+name = "LinkedIn"
+icon = "linkedin"
+url = "https://www.linkedin.com/in/lizfer/"
+
+# Main menu Items
+[[menu.main]]
+name = "Blog"
+url = "/blog"
+weight = 1
