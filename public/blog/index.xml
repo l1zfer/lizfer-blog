@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on Luiz Ferreira - lizfer.social</title>
+    <link>http://localhost:1313/blog/</link>
+    <description>Recent content in Blog on Luiz Ferreira - lizfer.social</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2025, Luiz Ferreira - lizfer.social.</copyright>
+    <lastBuildDate>Sat, 05 Jul 2025 01:13:58 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>First post - the great comeback</title>
+      <link>http://localhost:1313/blog/first-post-the-great-comeback/</link>
+      <pubDate>Sat, 05 Jul 2025 01:13:58 +0100</pubDate>
+      <guid>http://localhost:1313/blog/first-post-the-great-comeback/</guid>
+      <description>&lt;p&gt;Glad and very happy to be writing this post. It marks a comeback in many aspects of life: professional, personal&amp;hellip; spiritual, maybe?&lt;/p&gt;&#xA;&lt;p&gt;This summer started with an announcement: I am back at tecRacer, working as Cloud Consultant (that is, solutions architect) after two and a half years from resigning this position. All this time away from consulting led me to a place where confort was in place, but it somehow missed the growth that I was looking for when I left. Under new investment, brand and development roadmap, the firm looks to a brighter future ahead. And I&amp;rsquo;m quite honored to be part during this crucial moment.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

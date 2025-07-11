@@ -1,20 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Luiz Ferreira - lizfer.social</title>
+    <title>Home on Luiz Ferreira - lizfer.social</title>
     <link>http://localhost:1313/</link>
-    <description>Recent content on Luiz Ferreira - lizfer.social</description>
+    <description>Recent content in Home on Luiz Ferreira - lizfer.social</description>
     <generator>Hugo</generator>
     <language>en-US</language>
     <copyright>Copyright © 2025, Luiz Ferreira - lizfer.social.</copyright>
-    <lastBuildDate>Sat, 05 Jul 2025 01:13:58 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 11 Jul 2025 12:01:15 +0100</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>First Post</title>
-      <link>http://localhost:1313/posts/first-post/</link>
+      <title>About the author</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Fri, 11 Jul 2025 12:01:15 +0100</pubDate>
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Luiz Ferreira&lt;/strong&gt; is a &lt;strong&gt;Solutions Architect&lt;/strong&gt; with emphasis in &lt;strong&gt;Amazon Web Services (AWS)&lt;/strong&gt; cloud consultancy. With a broad expertise in Linux container orchestration, observability, networking and scaling (using &lt;strong&gt;Kubernetes&lt;/strong&gt;), this author writes about &lt;strong&gt;infrastructure-as-code&lt;/strong&gt;, migration to the cloud, tech certifications and other &lt;strong&gt;DevOps / Site Reliability Engineering&lt;/strong&gt; topics in this blog.&lt;/p&gt;&#xA;&lt;p&gt;Brazilian born 🇧🇷, Portugal based 🇵🇹, works over a decade with technology, call-centers, translation and agile methodologies, and holds academic degrees in marketing and software engineering - a blend of technical depth with strategic perspective.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>First post - the great comeback</title>
+      <link>http://localhost:1313/blog/first-post-the-great-comeback/</link>
       <pubDate>Sat, 05 Jul 2025 01:13:58 +0100</pubDate>
-      <guid>http://localhost:1313/posts/first-post/</guid>
-      <description>&lt;p&gt;Ok, this is where all starts. This will be my placeholder first post for UI changes. No need to follow up with it.&#xA;Hope the image is also appearing as logo. Otherwise, I&amp;rsquo;ll take this theme off.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/blog/first-post-the-great-comeback/</guid>
+      <description>&lt;p&gt;Glad and very happy to be writing this post. It marks a comeback in many aspects of life: professional, personal&amp;hellip; spiritual, maybe?&lt;/p&gt;&#xA;&lt;p&gt;This summer started with an announcement: I am back at tecRacer, working as Cloud Consultant (that is, solutions architect) after two and a half years from resigning this position. All this time away from consulting led me to a place where confort was in place, but it somehow missed the growth that I was looking for when I left. Under new investment, brand and development roadmap, the firm looks to a brighter future ahead. And I&amp;rsquo;m quite honored to be part during this crucial moment.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
