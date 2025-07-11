@@ -1,0 +1,36 @@
+{{ define "main" }}
+<content>
+  {{ .Content }}
+  
+  {{ $blogPosts := where .Site.RegularPages "Type" "blog" }}
+  {{ if $blogPosts }}
+  <h2>Recent Posts</h2>
+  <div class="blog-posts-preview">
+    {{ range first 5 $blogPosts }}
+    <article class="blog-post-preview">
+      <header>
+        <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+        <time datetime='{{ .Date.Format "2006-01-02" }}'>
+          {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
+        </time>
+      </header>
+      <div class="preview-content">
+        {{ if .Summary }}
+          <p>{{ .Summary | truncate 200 }}</p>
+        {{ else }}
+          <p>{{ .Content | plainify | truncate 200 }}</p>
+        {{ end }}
+        <a href="{{ .Permalink }}" class="read-more">Read more →</a>
+      </div>
+    </article>
+    {{ end }}
+  </div>
+  
+  {{ if gt (len $blogPosts) 5 }}
+  <div class="view-all-posts">
+    <a href="/blog/">View all posts →</a>
+  </div>
+  {{ end }}
+  {{ end }}
+</content>
+{{ end }} 

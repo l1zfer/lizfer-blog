@@ -16,7 +16,7 @@
 <meta property="og:url" content="http://localhost:1313/">
   <meta property="og:site_name" content="Luiz Ferreira - lizfer.social">
   <meta property="og:title" content="Home">
-  <meta property="og:description" content="Luiz Ferreira&#39;s personal blog about cloud architecture, DevOps practices, and tech career insights">
+  <meta property="og:description" content="Welcome to my blog! Here you’ll find articles about cloud solutions architecture, DevOps, technical certifications, and other topics related to Site Reliability Engineering.">
   <meta property="og:locale" content="en_US">
   <meta property="og:type" content="website">
     <meta property="og:image" content="http://localhost:1313/images/lizfer.png">
@@ -27,26 +27,32 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="http://localhost:1313/images/lizfer.png">
   <meta name="twitter:title" content="Home">
-  <meta name="twitter:description" content="Luiz Ferreira&#39;s personal blog about cloud architecture, DevOps practices, and tech career insights">
+  <meta name="twitter:description" content="Welcome to my blog! Here you’ll find articles about cloud solutions architecture, DevOps, technical certifications, and other topics related to Site Reliability Engineering.">
 
 
 
 
   <meta itemprop="name" content="Home">
-  <meta itemprop="description" content="Luiz Ferreira&#39;s personal blog about cloud architecture, DevOps practices, and tech career insights">
+  <meta itemprop="description" content="Welcome to my blog! Here you’ll find articles about cloud solutions architecture, DevOps, technical certifications, and other topics related to Site Reliability Engineering.">
   <meta itemprop="datePublished" content="2025-07-11T12:01:15+01:00">
   <meta itemprop="dateModified" content="2025-07-11T12:01:15+01:00">
+  <meta itemprop="wordCount" content="23">
   <meta itemprop="image" content="http://localhost:1313/images/lizfer.png">
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
   <link rel="alternate" type="application/rss+xml" href="http://localhost:1313/index.xml" title="Luiz Ferreira - lizfer.social" />
-  <style>
+  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
   :root {
     --width: 720px;
-    --font-main: Verdana, sans-serif;
-    --font-secondary: Verdana, sans-serif;
+    --font-main: 'Fira Code', monospace;
+    --font-secondary: 'Fira Code', monospace;
     --font-scale: 1em;
-    --background-color: #fff;
+    --background-color: #F1E9D2;
     --heading-color: #222;
     --text-color: #444;
     --link-color: #3273dc;
@@ -58,7 +64,7 @@
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --background-color: #01242e;
+      --background-color: #2C2416;
       --heading-color: #eee;
       --text-color: #ddd;
       --link-color: #8cc2dd;
@@ -118,7 +124,7 @@
   }
 
   time {
-    font-family: monospace;
+    font-family: var(--font-main);
     font-style: normal;
     font-size: 15px;
   }
@@ -141,7 +147,7 @@
   }
 
   code {
-    font-family: monospace;
+    font-family: var(--font-main);
     padding: 2px;
     background-color: var(--code-background-color);
     color: var(--code-color);
@@ -201,28 +207,187 @@
     color: var(--visited-color);
   }
 
-</style>
+   
+  .header-container {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
 
+  .header-image {
+    margin-bottom: 1rem;
+  }
+
+  .header-image img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--heading-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .header-container .title {
+    text-decoration: none;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .header-container .title h2 {
+    margin: 0;
+    font-size: 1.8em;
+    color: var(--heading-color);
+  }
+
+  .header-container nav {
+    margin-top: 1rem;
+  }
+
+  .header-container nav a {
+    margin: 0 8px;
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .header-container nav a:hover {
+    text-decoration: underline;
+  }
+
+   
+  .blog-posts-preview {
+    margin-top: 2rem;
+  }
+
+  .blog-post-preview {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px dashed var(--text-color);
+  }
+
+  .blog-post-preview:last-child {
+    border-bottom: none;
+  }
+
+  .blog-post-preview header {
+    margin-bottom: 1rem;
+  }
+
+  .blog-post-preview header h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.3em;
+  }
+
+  .blog-post-preview header h3 a {
+    color: var(--heading-color);
+    text-decoration: none;
+  }
+
+  .blog-post-preview header h3 a:hover {
+    color: var(--link-color);
+    text-decoration: underline;
+  }
+
+  .blog-post-preview time {
+    color: var(--text-color);
+    font-size: 0.9em;
+    opacity: 0.8;
+  }
+
+  .preview-content {
+    margin-top: 1rem;
+  }
+
+  .preview-content p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+  }
+
+  .read-more {
+    color: var(--link-color);
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 0.5rem;
+  }
+
+  .read-more:hover {
+    text-decoration: underline;
+  }
+
+  .view-all-posts {
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .view-all-posts a {
+    color: var(--link-color);
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--link-color);
+    border-radius: 5px;
+    display: inline-block;
+  }
+
+  .view-all-posts a:hover {
+    background-color: var(--link-color);
+    color: var(--background-color);
+  }
+
+</style> 
 </head>
 
 <body>
-  <header><a href="/" class="title">
-  <h2>Luiz Ferreira - lizfer.social</h2>
-</a>
-<nav>
+  <header><div class="header-container">
+  <div class="header-image">
+    <img src="/images/lizfer.png" alt="Luiz Ferreira Profile Picture">
+  </div>
+  <a href="/" class="title">
+    <h2>Luiz Ferreira - lizfer.social</h2>
+  </a>
+  <nav>
 <a href="/">Home</a>
-
-<a href="/about/">About the author</a>
 
 <a href="/about/">About</a>
 
 <a href="/blog/">Blog</a>
 
-<a href="/blog/">Blog</a>
 </nav>
-</header>
+</div> </header>
   <main>
+<content>
+  <h1 id="welcome-to-my-blog">Welcome to my blog!</h1>
+<p>Here you&rsquo;ll find articles about <strong>cloud solutions architecture</strong>, <strong>DevOps</strong>, <strong>technical certifications</strong>, and other topics related to <strong>Site Reliability Engineering</strong>.</p>
+<hr>
 
+  
+  
+  
+  <h2>Recent Posts</h2>
+  <div class="blog-posts-preview">
+    
+    <article class="blog-post-preview">
+      <header>
+        <h3><a href="http://localhost:1313/blog/first-post-the-great-comeback/">First post - the great comeback</a></h3>
+        <time datetime='2025-07-05'>
+          5 July, 2025
+        </time>
+      </header>
+      <div class="preview-content">
+        
+          <p><p>Glad and very happy to be writing this post. It marks a comeback in many aspects of life: professional, personal&hellip; spiritual, maybe?</p>
+<p>This summer started with an announcement: I am back at …</p></p>
+        
+        <a href="http://localhost:1313/blog/first-post-the-great-comeback/" class="read-more">Read more →</a>
+      </div>
+    </article>
+    
+  </div>
+  
+  
+  
+</content>
 
   </main>
   <footer>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=63529&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:63529/images/lizfer.png" />
+<title>Kubernetes em Produção: Lições Aprendidas | Luiz Ferreira - lizfer.social</title>
+<meta name="title" content="Kubernetes em Produção: Lições Aprendidas" />
+<meta name="description" content="Após anos trabalhando com Kubernetes em ambientes de produção, aprendi algumas lições valiosas que gostaria de compartilhar. Este post aborda os principais desafios e soluções para operar clusters Kubernetes em escala." />
+<meta name="keywords" content="" />
+
+
+<meta property="og:url" content="http://localhost:63529/blog/kubernetes-em-produ%C3%A7%C3%A3o-li%C3%A7%C3%B5es-aprendidas/">
+  <meta property="og:site_name" content="Luiz Ferreira - lizfer.social">
+  <meta property="og:title" content="Kubernetes em Produção: Lições Aprendidas">
+  <meta property="og:description" content="Após anos trabalhando com Kubernetes em ambientes de produção, aprendi algumas lições valiosas que gostaria de compartilhar. Este post aborda os principais desafios e soluções para operar clusters Kubernetes em escala.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2025-01-10T14:30:00+01:00">
+    <meta property="article:modified_time" content="2025-01-10T14:30:00+01:00">
+    <meta property="og:image" content="http://localhost:63529/images/lizfer.png">
+
+
+
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:63529/images/lizfer.png">
+  <meta name="twitter:title" content="Kubernetes em Produção: Lições Aprendidas">
+  <meta name="twitter:description" content="Após anos trabalhando com Kubernetes em ambientes de produção, aprendi algumas lições valiosas que gostaria de compartilhar. Este post aborda os principais desafios e soluções para operar clusters Kubernetes em escala.">
+
+
+
+
+  <meta itemprop="name" content="Kubernetes em Produção: Lições Aprendidas">
+  <meta itemprop="description" content="Após anos trabalhando com Kubernetes em ambientes de produção, aprendi algumas lições valiosas que gostaria de compartilhar. Este post aborda os principais desafios e soluções para operar clusters Kubernetes em escala.">
+  <meta itemprop="datePublished" content="2025-01-10T14:30:00+01:00">
+  <meta itemprop="dateModified" content="2025-01-10T14:30:00+01:00">
+  <meta itemprop="wordCount" content="189">
+  <meta itemprop="image" content="http://localhost:63529/images/lizfer.png">
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  :root {
+    --width: 720px;
+    --font-main: Verdana, sans-serif;
+    --font-secondary: Verdana, sans-serif;
+    --font-scale: 1em;
+    --background-color: #fff;
+    --heading-color: #222;
+    --text-color: #444;
+    --link-color: #3273dc;
+    --visited-color: #8b6fcb;
+    --code-background-color: #f2f2f2;
+    --code-color: #222;
+    --blockquote-color: #222;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background-color: #01242e;
+      --heading-color: #eee;
+      --text-color: #ddd;
+      --link-color: #8cc2dd;
+      --visited-color: #8b6fcb;
+      --code-background-color: #000;
+      --code-color: #ddd;
+      --blockquote-color: #ccc;
+    }
+  }
+
+  body {
+    font-family: var(--font-secondary);
+    font-size: var(--font-scale);
+    margin: auto;
+    padding: 20px;
+    max-width: var(--width);
+    text-align: left;
+    background-color: var(--background-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: var(--text-color);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-main);
+    color: var(--heading-color);
+  }
+
+  a {
+    color: var(--link-color);
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  nav a {
+    margin-right: 8px;
+  }
+
+  strong,
+  b {
+    color: var(--heading-color);
+  }
+
+  button {
+    margin: 0;
+    cursor: pointer;
+  }
+
+  time {
+    font-family: monospace;
+    font-style: normal;
+    font-size: 15px;
+  }
+
+  main {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px dashed;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    font-family: monospace;
+    padding: 2px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: var(--code-color);
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px 0;
+    text-align: center;
+  }
+
+  .title:hover {
+    text-decoration: none;
+  }
+
+  .title h1 {
+    font-size: 1.5em;
+  }
+
+  .inline {
+    width: auto !important;
+  }
+
+  .highlight,
+  .code {
+    padding: 1px 15px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    overflow-x: auto;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: var(--visited-color);
+  }
+
+</style>
+
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>Luiz Ferreira - lizfer.social</h2>
+</a>
+<nav>
+<a href="/">Home</a>
+
+<a href="/about/">About</a>
+
+<a href="/blog/">Blog</a>
+
+</nav>
+</header>
+  <main>
+
+<h1>Kubernetes em Produção: Lições Aprendidas</h1>
+<p>
+  <i>
+    <time datetime='2025-01-10'>
+      10 January, 2025
+    </time>
+  </i>
+</p>
+
+<content>
+  <p>Após anos trabalhando com Kubernetes em ambientes de produção, aprendi algumas lições valiosas que gostaria de compartilhar. Este post aborda os principais desafios e soluções para operar clusters Kubernetes em escala.</p>
+<h2 id="desafios-comuns">Desafios comuns</h2>
+<h3 id="1-gerenciamento-de-recursos">1. Gerenciamento de recursos</h3>
+<ul>
+<li><strong>Requests e Limits</strong> - Defina sempre recursos adequados</li>
+<li><strong>Horizontal Pod Autoscaler</strong> - Configure HPA para escalar automaticamente</li>
+<li><strong>Vertical Pod Autoscaler</strong> - Otimize recursos verticalmente</li>
+</ul>
+<h3 id="2-observabilidade">2. Observabilidade</h3>
+<ul>
+<li><strong>Prometheus + Grafana</strong> - Stack essencial para monitoramento</li>
+<li><strong>Logs centralizados</strong> - ELK Stack ou equivalente</li>
+<li><strong>Tracing distribuído</strong> - Jaeger ou Zipkin</li>
+</ul>
+<h3 id="3-segurança">3. Segurança</h3>
+<ul>
+<li><strong>Network Policies</strong> - Controle o tráfego entre pods</li>
+<li><strong>Pod Security Standards</strong> - Implemente políticas de segurança</li>
+<li><strong>RBAC</strong> - Role-Based Access Control bem definido</li>
+</ul>
+<h2 id="melhores-práticas">Melhores práticas</h2>
+<ol>
+<li><strong>Namespaces bem organizados</strong> - Separe ambientes e aplicações</li>
+<li><strong>GitOps</strong> - Use ArgoCD ou Flux para deployments</li>
+<li><strong>Backup e recuperação</strong> - Velero para backup de recursos</li>
+<li><strong>Testes de caos</strong> - Chaos Engineering com Litmus</li>
+</ol>
+<h2 id="ferramentas-recomendadas">Ferramentas recomendadas</h2>
+<ul>
+<li><strong>Helm</strong> - Gerenciamento de pacotes</li>
+<li><strong>Kustomize</strong> - Personalização de manifests</li>
+<li><strong>Lens</strong> - IDE para Kubernetes</li>
+<li><strong>K9s</strong> - Terminal UI para Kubernetes</li>
+</ul>
+<h2 id="conclusão">Conclusão</h2>
+<p>Kubernetes em produção requer planejamento cuidadoso e uso das ferramentas certas. Com essas práticas, você pode operar clusters robustos e confiáveis.</p>
+</content>
+<p>
+  
+</p>
+
+  </main>
+  <footer>
+</footer>
+
+  
+</body>
+
+</html>

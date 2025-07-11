@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=63529&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:63529/images/lizfer.png" />
+<title>Guia Completo para Certificações AWS | Luiz Ferreira - lizfer.social</title>
+<meta name="title" content="Guia Completo para Certificações AWS" />
+<meta name="description" content="As certificações AWS são uma forma excelente de validar suas habilidades e conhecimentos em computação na nuvem. Neste guia, vou compartilhar minha experiência e estratégias para obter as principais certificações." />
+<meta name="keywords" content="" />
+
+
+<meta property="og:url" content="http://localhost:63529/blog/guia-completo-para-certifica%C3%A7%C3%B5es-aws/">
+  <meta property="og:site_name" content="Luiz Ferreira - lizfer.social">
+  <meta property="og:title" content="Guia Completo para Certificações AWS">
+  <meta property="og:description" content="As certificações AWS são uma forma excelente de validar suas habilidades e conhecimentos em computação na nuvem. Neste guia, vou compartilhar minha experiência e estratégias para obter as principais certificações.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2025-01-15T10:00:00+01:00">
+    <meta property="article:modified_time" content="2025-01-15T10:00:00+01:00">
+    <meta property="og:image" content="http://localhost:63529/images/lizfer.png">
+
+
+
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:63529/images/lizfer.png">
+  <meta name="twitter:title" content="Guia Completo para Certificações AWS">
+  <meta name="twitter:description" content="As certificações AWS são uma forma excelente de validar suas habilidades e conhecimentos em computação na nuvem. Neste guia, vou compartilhar minha experiência e estratégias para obter as principais certificações.">
+
+
+
+
+  <meta itemprop="name" content="Guia Completo para Certificações AWS">
+  <meta itemprop="description" content="As certificações AWS são uma forma excelente de validar suas habilidades e conhecimentos em computação na nuvem. Neste guia, vou compartilhar minha experiência e estratégias para obter as principais certificações.">
+  <meta itemprop="datePublished" content="2025-01-15T10:00:00+01:00">
+  <meta itemprop="dateModified" content="2025-01-15T10:00:00+01:00">
+  <meta itemprop="wordCount" content="181">
+  <meta itemprop="image" content="http://localhost:63529/images/lizfer.png">
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  :root {
+    --width: 720px;
+    --font-main: Verdana, sans-serif;
+    --font-secondary: Verdana, sans-serif;
+    --font-scale: 1em;
+    --background-color: #fff;
+    --heading-color: #222;
+    --text-color: #444;
+    --link-color: #3273dc;
+    --visited-color: #8b6fcb;
+    --code-background-color: #f2f2f2;
+    --code-color: #222;
+    --blockquote-color: #222;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background-color: #01242e;
+      --heading-color: #eee;
+      --text-color: #ddd;
+      --link-color: #8cc2dd;
+      --visited-color: #8b6fcb;
+      --code-background-color: #000;
+      --code-color: #ddd;
+      --blockquote-color: #ccc;
+    }
+  }
+
+  body {
+    font-family: var(--font-secondary);
+    font-size: var(--font-scale);
+    margin: auto;
+    padding: 20px;
+    max-width: var(--width);
+    text-align: left;
+    background-color: var(--background-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: var(--text-color);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-main);
+    color: var(--heading-color);
+  }
+
+  a {
+    color: var(--link-color);
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  nav a {
+    margin-right: 8px;
+  }
+
+  strong,
+  b {
+    color: var(--heading-color);
+  }
+
+  button {
+    margin: 0;
+    cursor: pointer;
+  }
+
+  time {
+    font-family: monospace;
+    font-style: normal;
+    font-size: 15px;
+  }
+
+  main {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px dashed;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    font-family: monospace;
+    padding: 2px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: var(--code-color);
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px 0;
+    text-align: center;
+  }
+
+  .title:hover {
+    text-decoration: none;
+  }
+
+  .title h1 {
+    font-size: 1.5em;
+  }
+
+  .inline {
+    width: auto !important;
+  }
+
+  .highlight,
+  .code {
+    padding: 1px 15px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    overflow-x: auto;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: var(--visited-color);
+  }
+
+</style>
+
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>Luiz Ferreira - lizfer.social</h2>
+</a>
+<nav>
+<a href="/">Home</a>
+
+<a href="/about/">About</a>
+
+<a href="/blog/">Blog</a>
+
+</nav>
+</header>
+  <main>
+
+<h1>Guia Completo para Certificações AWS</h1>
+<p>
+  <i>
+    <time datetime='2025-01-15'>
+      15 January, 2025
+    </time>
+  </i>
+</p>
+
+<content>
+  <p>As certificações AWS são uma forma excelente de validar suas habilidades e conhecimentos em computação na nuvem. Neste guia, vou compartilhar minha experiência e estratégias para obter as principais certificações.</p>
+<h2 id="por-que-buscar-certificações-aws">Por que buscar certificações AWS?</h2>
+<ol>
+<li><strong>Validação técnica</strong> - Demonstra conhecimento prático dos serviços AWS</li>
+<li><strong>Oportunidades de carreira</strong> - Muitas vagas exigem certificações</li>
+<li><strong>Aumento salarial</strong> - Profissionais certificados ganham em média 25% mais</li>
+<li><strong>Conhecimento estruturado</strong> - Força você a estudar tópicos importantes</li>
+</ol>
+<h2 id="trilhas-de-certificação">Trilhas de certificação</h2>
+<h3 id="nível-foundational">Nível Foundational</h3>
+<ul>
+<li><strong>AWS Cloud Practitioner</strong> - Ideal para iniciantes</li>
+</ul>
+<h3 id="nível-associate">Nível Associate</h3>
+<ul>
+<li><strong>Solutions Architect Associate</strong> - Para arquitetos de soluções</li>
+<li><strong>Developer Associate</strong> - Para desenvolvedores</li>
+<li><strong>SysOps Administrator Associate</strong> - Para administradores de sistemas</li>
+</ul>
+<h3 id="nível-professional">Nível Professional</h3>
+<ul>
+<li><strong>Solutions Architect Professional</strong> - Para arquitetos seniores</li>
+<li><strong>DevOps Engineer Professional</strong> - Para engenheiros DevOps</li>
+</ul>
+<h2 id="dicas-de-estudo">Dicas de estudo</h2>
+<ol>
+<li><strong>Prática hands-on</strong> - Use o AWS Free Tier extensivamente</li>
+<li><strong>Simulados</strong> - Faça muitos testes práticos</li>
+<li><strong>Documentação oficial</strong> - Leia a documentação dos serviços</li>
+<li><strong>Labs práticos</strong> - Implemente projetos reais</li>
+</ol>
+<h2 id="conclusão">Conclusão</h2>
+<p>As certificações AWS são um investimento valioso na sua carreira. Com dedicação e as estratégias certas, você pode conquistar essas certificações e abrir novas oportunidades profissionais.</p>
+</content>
+<p>
+  
+</p>
+
+  </main>
+  <footer>
+</footer>
+
+  
+</body>
+
+</html>
