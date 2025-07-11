@@ -1,48 +1,64 @@
+# Base URL used when generating links to your pages
+# Set to the URL for your site
 baseURL = "https://lizfer.social"
-languageCode = "en"
+
+# The name of this wonderful theme ;-).
+theme = 'hugo-bearblog'
+
+# Basic metadata configuration for your blog.
 title = "Luiz Ferreira - lizfer.social"
-copyright = "© Luiz Ferreira - lizfer.social"
-enableGitInfo = true
+author = "Luiz Ferreira"
+copyright = "Copyright © 2025, Luiz Ferreira - lizfer.social."
+languageCode = "en-US"
 
-# Code Highlight
-pygmentsstyle = "monokai"
-pygmentscodefences = true
-pygmentscodefencesguesssyntax = true
+# Generate a nice robots.txt for SEO
+enableRobotsTXT = true
 
-[pagination]
-pagerSize = 10
+# Generate "Bearblog"-like URLs !only!, see https://bearblog.dev/.
+disableKinds = ["taxonomy"]
+ignoreErrors = ["error-disable-taxonomy"]
+[permalinks]
+  blog = "/:slug/"
+  tags = "/blog/:slug"
 
 [params]
-# Add a logo to your site by placing an image in the assets directory
-# and setting the path here. Preferably a square png image.
-logo = "images/lizfer.png"
+  # The "description" of your website. This is used in the meta data of your generated html.
+  description = "Hugo + Bear = :heart:"
 
-# Choose a colour scheme from one of the Pico CSS colurs.
-colourScheme = "blue"
+  # The path to your "favicon". This should be a square (at least 32px x 32px) png-file.
+  # Hint: It's good practise to also put a "favicon.ico"-file into your "static"-folder.
+  favicon = "images/lizfer.png"
 
-# Turn on offline caching with a service worker and cache all pages.
-serviceWorker = "precache"
-# Or cache pages on-demand.
-# serviceWorker = true
+  # These "images" are used for the structured data templates. This will show up, when
+  # services like Twitter or Slack want to generate a preview of a link to your site.
+  # See https://gohugo.io/templates/internal#twitter-cards and
+  # https://gohugo.io/templates/internal#open-graph.
+  images = ["images/share.png"]
 
-# Add a subtitle on the home page.
-subtitle = "Minimal and Clean [blog theme for Hugo](https://github.com/ananthb/jughead)"
+  # Another "title" :-). This one is used as the site_name on the Hugo's internal
+  # opengraph structured data template.
+  # See https://ogp.me/ and https://gohugo.io/templates/internal#open-graph.
+  title = "Luiz Ferreira - lizfer.social"
 
-# Site GitHub Repository slig
-# If enableGitInfo is true, this will add a link to the source code of the site.
-siteRepo = "your-github-org/your-site-repo"
+  # This theme will, by default, inject a made-with-line at the bottom of the page.
+  # You can turn it off, but we would really appreciate if you don’t :-).
+  # hideMadeWithLine = true
 
-# JSON Resume Registry slug
-# Or create a resume.json file in the data directory.
-jsonResumeRegistrySlug = "l1zfer"
+  # By default, this theme displays dates with a format like "02 Jan, 2006", but
+  # you can customize it by setting the `dateFormat` param in your site's config
+  # file. See [Hugo's Format function docs](https://gohugo.io/functions/format/)
+  # for details. An example TOML config that uses [ISO
+  # 8601](https://en.wikipedia.org/wiki/ISO_8601) format:
+  # dateFormat = "2006-01-02"
 
-# Comments
-# Get these values by filling out the form on https://giscus.app
-[params.giscus]
-repo = "your-github-org/your-comments-repo"
-repoID = "your-github-repo-id"
-category = "your-announcement-category"
-categoryID = "your-announcement-category-id"
+# Configure markup highlighter to match "Bearblog" aesthetics, see 
+# https://gohugo.io/configuration/markup/#highlight
+[markup]
+  [markup.highlight]
+    style = 'friendly'
+    lineNos = true
+    lineNumbersInTable = false
+    codeFences = true
 
 # Social Tags
 [[params.social]]
@@ -54,9 +70,3 @@ url = "https://github.com/l1zfer"
 name = "LinkedIn"
 icon = "linkedin"
 url = "https://www.linkedin.com/in/lizfer/"
-
-# Main menu Items
-[[menu.main]]
-name = "Blog"
-url = "/blog"
-weight = 1

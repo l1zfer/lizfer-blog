@@ -5,9 +5,16 @@
     <link>http://localhost:1313/</link>
     <description>Recent content on Luiz Ferreira - lizfer.social</description>
     <generator>Hugo</generator>
-    <language>en</language>
-    <copyright>© Luiz Ferreira - lizfer.social</copyright>
-    <lastBuildDate></lastBuildDate>
+    <language>en-US</language>
+    <copyright>Copyright © 2025, Luiz Ferreira - lizfer.social.</copyright>
+    <lastBuildDate>Sat, 05 Jul 2025 01:13:58 +0100</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>First Post</title>
+      <link>http://localhost:1313/posts/first-post/</link>
+      <pubDate>Sat, 05 Jul 2025 01:13:58 +0100</pubDate>
+      <guid>http://localhost:1313/posts/first-post/</guid>
+      <description>&lt;p&gt;Ok, this is where all starts. This will be my placeholder first post for UI changes. No need to follow up with it.&#xA;Hope the image is also appearing as logo. Otherwise, I&amp;rsquo;ll take this theme off.&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>
