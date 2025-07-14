@@ -16,7 +16,8 @@
 <meta property="og:url" content="http://localhost:1313/">
   <meta property="og:site_name" content="Luiz Ferreira - lizfer.social">
   <meta property="og:title" content="Home">
-  <meta property="og:description" content="Welcome to my blog! Here you’ll find articles about cloud solutions architecture, DevOps, technical certifications, and other topics related to Site Reliability Engineering.">
+  <meta property="og:description" content="Here you’ll find articles about cloud solutions architecture, DevOps, technical certifications, and other topics related to Site Reliability Engineering.
+Let’s connect: • LinkedIn • GitHub • Email">
   <meta property="og:locale" content="en_US">
   <meta property="og:type" content="website">
     <meta property="og:image" content="http://localhost:1313/images/lizfer.png">
@@ -27,16 +28,18 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="http://localhost:1313/images/lizfer.png">
   <meta name="twitter:title" content="Home">
-  <meta name="twitter:description" content="Welcome to my blog! Here you’ll find articles about cloud solutions architecture, DevOps, technical certifications, and other topics related to Site Reliability Engineering.">
+  <meta name="twitter:description" content="Here you’ll find articles about cloud solutions architecture, DevOps, technical certifications, and other topics related to Site Reliability Engineering.
+Let’s connect: • LinkedIn • GitHub • Email">
 
 
 
 
   <meta itemprop="name" content="Home">
-  <meta itemprop="description" content="Welcome to my blog! Here you’ll find articles about cloud solutions architecture, DevOps, technical certifications, and other topics related to Site Reliability Engineering.">
-  <meta itemprop="datePublished" content="2025-07-11T12:01:15+01:00">
-  <meta itemprop="dateModified" content="2025-07-11T12:01:15+01:00">
-  <meta itemprop="wordCount" content="23">
+  <meta itemprop="description" content="Here you’ll find articles about cloud solutions architecture, DevOps, technical certifications, and other topics related to Site Reliability Engineering.
+Let’s connect: • LinkedIn • GitHub • Email">
+  <meta itemprop="datePublished" content="2025-07-14T01:13:58+01:00">
+  <meta itemprop="dateModified" content="2025-07-14T01:13:58+01:00">
+  <meta itemprop="wordCount" content="27">
   <meta itemprop="image" content="http://localhost:1313/images/lizfer.png">
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
@@ -261,11 +264,6 @@
   .blog-post-preview {
     margin-bottom: 3rem;
     padding-bottom: 2rem;
-    border-bottom: 1px dashed var(--text-color);
-  }
-
-  .blog-post-preview:last-child {
-    border-bottom: none;
   }
 
   .blog-post-preview header {
@@ -335,13 +333,39 @@
     color: var(--background-color);
   }
 
-</style> 
-</head>
+</style> <style>
+ 
+a strong,
+a b,
+strong a,
+b a {
+  color: var(--link-color) !important;
+}
+
+ 
+a:visited strong,
+a:visited b,
+strong a:visited,
+b a:visited {
+  color: var(--visited-color) !important;
+}
+
+ 
+a:hover strong,
+a:hover b,
+strong a:hover,
+b a:hover {
+  color: var(--link-color) !important;
+  text-decoration: underline;
+}
+</style> </head>
 
 <body>
   <header><div class="header-container">
   <div class="header-image">
-    <img src="/images/lizfer.png" alt="Luiz Ferreira Profile Picture">
+    <a href="/">
+      <img src="/images/lizfer.png" alt="Luiz Ferreira Profile Picture">
+    </a>
   </div>
   <a href="/" class="title">
     <h2>Luiz Ferreira - lizfer.social</h2>
@@ -357,8 +381,11 @@
 </div> </header>
   <main>
 <content>
-  <h1 id="welcome-to-my-blog">Welcome to my blog!</h1>
-<p>Here you&rsquo;ll find articles about <strong>cloud solutions architecture</strong>, <strong>DevOps</strong>, <strong>technical certifications</strong>, and other topics related to <strong>Site Reliability Engineering</strong>.</p>
+  <p>Here you&rsquo;ll find articles about <strong>cloud solutions architecture</strong>, <strong>DevOps</strong>, <strong>technical certifications</strong>, and other topics related to <strong>Site Reliability Engineering</strong>.</p>
+<p><strong>Let&rsquo;s connect:</strong>
+• <a href="https://www.linkedin.com/in/lizfer/">LinkedIn</a>
+• <a href="https://github.com/l1zfer">GitHub</a>
+• <a href="mailto:luizferreira@outlook.com">Email</a></p>
 <hr>
 
   
@@ -367,21 +394,29 @@
   <h2>Recent Posts</h2>
   <div class="blog-posts-preview">
     
-    <article class="blog-post-preview">
+    <article class="blog-post-preview" style="margin-bottom: 1.5rem; padding-bottom: 1rem;">
       <header>
         <h3><a href="http://localhost:1313/blog/first-post-the-great-comeback/">First post - the great comeback</a></h3>
-        <time datetime='2025-07-05'>
-          5 July, 2025
-        </time>
+        <span style="color: var(--text-color); opacity: 0.8; font-size: 0.9em;">
+          <i>
+            <time datetime='2025-07-14'>
+              14 July, 2025
+            </time>
+          </i>
+          |
+          <i>written by Luiz Ferreira</i>
+        </span>
       </header>
       <div class="preview-content">
         
-          <p><p>Glad and very happy to be writing this post. It marks a comeback in many aspects of life: professional, personal&hellip; spiritual, maybe?</p>
-<p>This summer started with an announcement: I am back at …</p></p>
+          <small style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; margin-bottom: 1rem;"><i><p>Glad and very happy to be writing this post. It marks a comeback in many aspects of life: professional, personal&hellip; spiritual, maybe?</p>
+<h3 id="back-to-consulting">Back to consulting</h3>
+<p>This summer started with an announcement: …</p></i></small>
         
         <a href="http://localhost:1313/blog/first-post-the-great-comeback/" class="read-more">Read more →</a>
       </div>
     </article>
+    
     
   </div>
   
@@ -390,8 +425,17 @@
 </content>
 
   </main>
-  <footer>
-</footer>
+  <footer><footer style="margin-top: 3rem; padding: 2rem 0; border-top: 1px dashed var(--text-color); opacity: 0.3; text-align: center;">
+  <div style="color: var(--text-color); opacity: 0.7; font-size: 0.9em;">
+    <p style="margin: 0.5rem 0;">
+      © 2025 <strong>Luiz Ferreira</strong>. All rights reserved.
+    </p>
+    <p style="margin: 0.5rem 0; font-style: italic;">
+      Made with <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" style="color: var(--link-color);">Hugo</a> 
+      and <a href="https://github.com/janraasch/hugo-bearblog/" target="_blank" rel="noopener noreferrer" style="color: var(--link-color);">Bear Blog theme</a>
+    </p>
+  </div>
+</footer> </footer>
 
   
 </body>

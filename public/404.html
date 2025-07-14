@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="shortcut icon" href="http://localhost:1313/images/lizfer.png" />
-<title>404</title>
+<title>404 - Page Not Found</title>
 <meta name="title" content="404 Page not found" />
 <meta name="description" content="Luiz Ferreira&#39;s personal blog about cloud architecture, DevOps practices, and tech career insights" />
 <meta name="keywords" content="" />
@@ -256,11 +256,6 @@
   .blog-post-preview {
     margin-bottom: 3rem;
     padding-bottom: 2rem;
-    border-bottom: 1px dashed var(--text-color);
-  }
-
-  .blog-post-preview:last-child {
-    border-bottom: none;
   }
 
   .blog-post-preview header {
@@ -330,13 +325,39 @@
     color: var(--background-color);
   }
 
-</style> 
-</head>
+</style> <style>
+ 
+a strong,
+a b,
+strong a,
+b a {
+  color: var(--link-color) !important;
+}
+
+ 
+a:visited strong,
+a:visited b,
+strong a:visited,
+b a:visited {
+  color: var(--visited-color) !important;
+}
+
+ 
+a:hover strong,
+a:hover b,
+strong a:hover,
+b a:hover {
+  color: var(--link-color) !important;
+  text-decoration: underline;
+}
+</style> </head>
 
 <body>
   <header><div class="header-container">
   <div class="header-image">
-    <img src="/images/lizfer.png" alt="Luiz Ferreira Profile Picture">
+    <a href="/">
+      <img src="/images/lizfer.png" alt="Luiz Ferreira Profile Picture">
+    </a>
   </div>
   <a href="/" class="title">
     <h2>Luiz Ferreira - lizfer.social</h2>
@@ -351,12 +372,76 @@
 </nav>
 </div> </header>
   <main>
-<h1>404</h1>
-<h2>ʕノ•ᴥ•ʔノ ︵ ┻━┻</h2>
+<div style="text-align: center; padding: 4rem 0; max-width: 600px; margin: 0 auto;">
+  <div style="font-size: 8rem; color: var(--link-color); font-weight: bold; line-height: 1; margin-bottom: 1rem;">
+    404
+  </div>
+  
+  <h1 style="font-size: 2rem; color: var(--heading-color); margin-bottom: 1rem;">
+    Page Not Found
+  </h1>
+  
+  <p style="font-size: 1.2rem; color: var(--text-color); margin-bottom: 2rem; line-height: 1.6;">
+    Oops! The page you're looking for doesn't exist or has been moved.
+  </p>
+  
+  <div style="margin-bottom: 3rem;">
+    <a href="/" style="
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: var(--link-color);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: opacity 0.3s ease;
+    " onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
+      ← Back to Home
+    </a>
+  </div>
+  
+  <div style="color: var(--text-color); opacity: 0.7; font-size: 0.9rem;">
+    <p>Here are some options that might help:</p>
+    <ul style="list-style: none; padding: 0; margin: 1rem 0;">
+      <li style="margin: 0.5rem 0;">
+        <a href="/blog" style="color: var(--link-color);">📝 View all posts</a>
+      </li>
+      <li style="margin: 0.5rem 0;">
+        <a href="/about" style="color: var(--link-color);">👨‍💻 About the author</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<style>
+@media (max-width: 600px) {
+  .not-found-container {
+    padding: 2rem 1rem;
+  }
+  
+  .not-found-container div[style*="font-size: 8rem"] {
+    font-size: 5rem !important;
+  }
+  
+  .not-found-container h1 {
+    font-size: 1.5rem !important;
+  }
+}
+</style>
+
 
   </main>
-  <footer>
-</footer>
+  <footer><footer style="margin-top: 3rem; padding: 2rem 0; border-top: 1px dashed var(--text-color); opacity: 0.3; text-align: center;">
+  <div style="color: var(--text-color); opacity: 0.7; font-size: 0.9em;">
+    <p style="margin: 0.5rem 0;">
+      © 2025 <strong>Luiz Ferreira</strong>. All rights reserved.
+    </p>
+    <p style="margin: 0.5rem 0; font-style: italic;">
+      Made with <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" style="color: var(--link-color);">Hugo</a> 
+      and <a href="https://github.com/janraasch/hugo-bearblog/" target="_blank" rel="noopener noreferrer" style="color: var(--link-color);">Bear Blog theme</a>
+    </p>
+  </div>
+</footer> </footer>
 
   
 </body>

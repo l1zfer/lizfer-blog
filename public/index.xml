@@ -7,21 +7,21 @@
     <generator>Hugo</generator>
     <language>en-US</language>
     <copyright>Copyright © 2025, Luiz Ferreira - lizfer.social.</copyright>
-    <lastBuildDate>Fri, 11 Jul 2025 12:01:15 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 14 Jul 2025 01:13:58 +0100</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>First post - the great comeback</title>
+      <link>http://localhost:1313/blog/first-post-the-great-comeback/</link>
+      <pubDate>Mon, 14 Jul 2025 01:13:58 +0100</pubDate>
+      <guid>http://localhost:1313/blog/first-post-the-great-comeback/</guid>
+      <description>&lt;p&gt;Glad and very happy to be writing this post. It marks a comeback in many aspects of life: professional, personal&amp;hellip; spiritual, maybe?&lt;/p&gt;&#xA;&lt;h3 id=&#34;back-to-consulting&#34;&gt;Back to consulting&lt;/h3&gt;&#xA;&lt;p&gt;This summer started with an announcement: I am back at &lt;a href=&#34;https://tecracer.com/en&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;&lt;strong&gt;tecRacer&lt;/strong&gt;&lt;/a&gt;, working as &lt;strong&gt;Cloud Consultant&lt;/strong&gt; (that is, solutions architect) after two and a half years from resigning this position. All this time away from consulting led me to a place where comfort was in place, but it somehow missed the growth that I was looking for when I left.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>About the author</title>
       <link>http://localhost:1313/about/</link>
       <pubDate>Fri, 11 Jul 2025 12:01:15 +0100</pubDate>
       <guid>http://localhost:1313/about/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Luiz Ferreira&lt;/strong&gt; is a &lt;strong&gt;Solutions Architect&lt;/strong&gt; with emphasis in &lt;strong&gt;Amazon Web Services (AWS)&lt;/strong&gt; cloud consultancy. With a broad expertise in Linux container orchestration, observability, networking and scaling (using &lt;strong&gt;Kubernetes&lt;/strong&gt;), this author writes about &lt;strong&gt;infrastructure-as-code&lt;/strong&gt;, migration to the cloud, tech certifications and other &lt;strong&gt;DevOps / Site Reliability Engineering&lt;/strong&gt; topics in this blog.&lt;/p&gt;&#xA;&lt;p&gt;Brazilian born 🇧🇷, Portugal based 🇵🇹, works over a decade with technology, call-centers, translation and agile methodologies, and holds academic degrees in marketing and software engineering - a blend of technical depth with strategic perspective.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>First post - the great comeback</title>
-      <link>http://localhost:1313/blog/first-post-the-great-comeback/</link>
-      <pubDate>Sat, 05 Jul 2025 01:13:58 +0100</pubDate>
-      <guid>http://localhost:1313/blog/first-post-the-great-comeback/</guid>
-      <description>&lt;p&gt;Glad and very happy to be writing this post. It marks a comeback in many aspects of life: professional, personal&amp;hellip; spiritual, maybe?&lt;/p&gt;&#xA;&lt;p&gt;This summer started with an announcement: I am back at tecRacer, working as Cloud Consultant (that is, solutions architect) after two and a half years from resigning this position. All this time away from consulting led me to a place where confort was in place, but it somehow missed the growth that I was looking for when I left. Under new investment, brand and development roadmap, the firm looks to a brighter future ahead. And I&amp;rsquo;m quite honored to be part during this crucial moment.&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;strong&gt;Luiz Ferreira&lt;/strong&gt; (A.K.A. Lizfer) is a &lt;strong&gt;Solutions Architect&lt;/strong&gt; with emphasis in &lt;strong&gt;Amazon Web Services (AWS)&lt;/strong&gt; cloud consultancy. With a broad expertise in Linux container orchestration, observability, networking and scaling (using &lt;strong&gt;Kubernetes&lt;/strong&gt;), this author writes about &lt;strong&gt;infrastructure-as-code&lt;/strong&gt;, migration to the cloud, tech certifications and other &lt;strong&gt;DevOps / Site Reliability Engineering&lt;/strong&gt; topics in this blog.&lt;/p&gt;&#xA;&lt;p&gt;Brazilian born 🇧🇷, Portugal based 🇵🇹, works over a decade with technology, call-centers, translation and agile methodologies, and holds academic degrees in marketing and software engineering - a blend of technical depth with strategic perspective.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

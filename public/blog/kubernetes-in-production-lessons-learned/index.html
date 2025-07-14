@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/lizfer.png" />
+<title>Kubernetes in Production: Lessons Learned | Luiz Ferreira - lizfer.social</title>
+<meta name="title" content="Kubernetes in Production: Lessons Learned" />
+<meta name="description" content="Running Kubernetes clusters in production environments has taught me valuable lessons about scalability, reliability, and operational excellence.
+Resource Management
+One of the most critical aspects of production Kubernetes is proper resource management. Setting appropriate CPU and memory limits prevents resource contention and ensures stable performance across your cluster.
+Monitoring and Observability
+Implementing comprehensive monitoring with tools like Prometheus and Grafana is essential for maintaining visibility into your cluster&rsquo;s health and performance." />
+<meta name="keywords" content="" />
+
+
+<meta property="og:url" content="http://localhost:1313/blog/kubernetes-in-production-lessons-learned/">
+  <meta property="og:site_name" content="Luiz Ferreira - lizfer.social">
+  <meta property="og:title" content="Kubernetes in Production: Lessons Learned">
+  <meta property="og:description" content="Running Kubernetes clusters in production environments has taught me valuable lessons about scalability, reliability, and operational excellence.
+Resource Management One of the most critical aspects of production Kubernetes is proper resource management. Setting appropriate CPU and memory limits prevents resource contention and ensures stable performance across your cluster.
+Monitoring and Observability Implementing comprehensive monitoring with tools like Prometheus and Grafana is essential for maintaining visibility into your cluster’s health and performance.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2025-07-10T14:20:00+01:00">
+    <meta property="article:modified_time" content="2025-07-10T14:20:00+01:00">
+    <meta property="og:image" content="http://localhost:1313/images/lizfer.png">
+
+
+
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/images/lizfer.png">
+  <meta name="twitter:title" content="Kubernetes in Production: Lessons Learned">
+  <meta name="twitter:description" content="Running Kubernetes clusters in production environments has taught me valuable lessons about scalability, reliability, and operational excellence.
+Resource Management One of the most critical aspects of production Kubernetes is proper resource management. Setting appropriate CPU and memory limits prevents resource contention and ensures stable performance across your cluster.
+Monitoring and Observability Implementing comprehensive monitoring with tools like Prometheus and Grafana is essential for maintaining visibility into your cluster’s health and performance.">
+
+
+
+
+  <meta itemprop="name" content="Kubernetes in Production: Lessons Learned">
+  <meta itemprop="description" content="Running Kubernetes clusters in production environments has taught me valuable lessons about scalability, reliability, and operational excellence.
+Resource Management One of the most critical aspects of production Kubernetes is proper resource management. Setting appropriate CPU and memory limits prevents resource contention and ensures stable performance across your cluster.
+Monitoring and Observability Implementing comprehensive monitoring with tools like Prometheus and Grafana is essential for maintaining visibility into your cluster’s health and performance.">
+  <meta itemprop="datePublished" content="2025-07-10T14:20:00+01:00">
+  <meta itemprop="dateModified" content="2025-07-10T14:20:00+01:00">
+  <meta itemprop="wordCount" content="134">
+  <meta itemprop="image" content="http://localhost:1313/images/lizfer.png">
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --width: 720px;
+    --font-main: 'Fira Code', monospace;
+    --font-secondary: 'Fira Code', monospace;
+    --font-scale: 1em;
+    --background-color: #F1E9D2;
+    --heading-color: #222;
+    --text-color: #444;
+    --link-color: #3273dc;
+    --visited-color: #8b6fcb;
+    --code-background-color: #f2f2f2;
+    --code-color: #222;
+    --blockquote-color: #222;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background-color: #2C2416;
+      --heading-color: #eee;
+      --text-color: #ddd;
+      --link-color: #8cc2dd;
+      --visited-color: #8b6fcb;
+      --code-background-color: #000;
+      --code-color: #ddd;
+      --blockquote-color: #ccc;
+    }
+  }
+
+  body {
+    font-family: var(--font-secondary);
+    font-size: var(--font-scale);
+    margin: auto;
+    padding: 20px;
+    max-width: var(--width);
+    text-align: left;
+    background-color: var(--background-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: var(--text-color);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-main);
+    color: var(--heading-color);
+  }
+
+  a {
+    color: var(--link-color);
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  nav a {
+    margin-right: 8px;
+  }
+
+  strong,
+  b {
+    color: var(--heading-color);
+  }
+
+  button {
+    margin: 0;
+    cursor: pointer;
+  }
+
+  time {
+    font-family: var(--font-main);
+    font-style: normal;
+    font-size: 15px;
+  }
+
+  main {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px dashed;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    font-family: var(--font-main);
+    padding: 2px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: var(--code-color);
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px 0;
+    text-align: center;
+  }
+
+  .title:hover {
+    text-decoration: none;
+  }
+
+  .title h1 {
+    font-size: 1.5em;
+  }
+
+  .inline {
+    width: auto !important;
+  }
+
+  .highlight,
+  .code {
+    padding: 1px 15px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    overflow-x: auto;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: var(--visited-color);
+  }
+
+   
+  .header-container {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .header-image {
+    margin-bottom: 1rem;
+  }
+
+  .header-image img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--heading-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .header-container .title {
+    text-decoration: none;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .header-container .title h2 {
+    margin: 0;
+    font-size: 1.8em;
+    color: var(--heading-color);
+  }
+
+  .header-container nav {
+    margin-top: 1rem;
+  }
+
+  .header-container nav a {
+    margin: 0 8px;
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .header-container nav a:hover {
+    text-decoration: underline;
+  }
+
+   
+  .blog-posts-preview {
+    margin-top: 2rem;
+  }
+
+  .blog-post-preview {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+  }
+
+  .blog-post-preview header {
+    margin-bottom: 1rem;
+  }
+
+  .blog-post-preview header h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.3em;
+  }
+
+  .blog-post-preview header h3 a {
+    color: var(--heading-color);
+    text-decoration: none;
+  }
+
+  .blog-post-preview header h3 a:hover {
+    color: var(--link-color);
+    text-decoration: underline;
+  }
+
+  .blog-post-preview time {
+    color: var(--text-color);
+    font-size: 0.9em;
+    opacity: 0.8;
+  }
+
+  .preview-content {
+    margin-top: 1rem;
+  }
+
+  .preview-content p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+  }
+
+  .read-more {
+    color: var(--link-color);
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 0.5rem;
+  }
+
+  .read-more:hover {
+    text-decoration: underline;
+  }
+
+  .view-all-posts {
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .view-all-posts a {
+    color: var(--link-color);
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--link-color);
+    border-radius: 5px;
+    display: inline-block;
+  }
+
+  .view-all-posts a:hover {
+    background-color: var(--link-color);
+    color: var(--background-color);
+  }
+
+</style> <style>
+ 
+a strong,
+a b,
+strong a,
+b a {
+  color: var(--link-color) !important;
+}
+
+ 
+a:visited strong,
+a:visited b,
+strong a:visited,
+b a:visited {
+  color: var(--visited-color) !important;
+}
+
+ 
+a:hover strong,
+a:hover b,
+strong a:hover,
+b a:hover {
+  color: var(--link-color) !important;
+  text-decoration: underline;
+}
+</style> </head>
+
+<body>
+  <header><div class="header-container">
+  <div class="header-image">
+    <a href="/">
+      <img src="/images/lizfer.png" alt="Luiz Ferreira Profile Picture">
+    </a>
+  </div>
+  <a href="/" class="title">
+    <h2>Luiz Ferreira - lizfer.social</h2>
+  </a>
+  <nav>
+<a href="/">Home</a>
+
+<a href="/about/">About</a>
+
+<a href="/blog/">Blog</a>
+
+</nav>
+</div> </header>
+  <main>
+
+<h1 style="margin-bottom: 0.2rem;">Kubernetes in Production: Lessons Learned</h1>
+<div style="font-size: 0.8em; color: var(--text-color); opacity: 0.8; margin-bottom: 1rem; line-height: 1.2;">
+  <i>
+    <time datetime='2025-07-10'>
+      10 July, 2025
+    </time>
+  </i>
+  |
+  <i>written by Luiz Ferreira</i>
+</div>
+<hr style="border: 0; border-top: 1px dashed var(--text-color); opacity: 0.3; margin-bottom: 2rem;">
+
+<content>
+  <p>Running Kubernetes clusters in production environments has taught me valuable lessons about scalability, reliability, and operational excellence.</p>
+<h3 id="resource-management">Resource Management</h3>
+<p>One of the most critical aspects of production Kubernetes is proper resource management. Setting appropriate CPU and memory limits prevents resource contention and ensures stable performance across your cluster.</p>
+<h3 id="monitoring-and-observability">Monitoring and Observability</h3>
+<p>Implementing comprehensive monitoring with tools like <a href="https://prometheus.io" target="_blank" rel="noopener noreferrer">Prometheus</a> and <a href="https://grafana.com" target="_blank" rel="noopener noreferrer">Grafana</a> is essential for maintaining visibility into your cluster&rsquo;s health and performance.</p>
+<h3 id="security-considerations">Security Considerations</h3>
+<p>Security in Kubernetes requires a multi-layered approach, including proper RBAC configuration, network policies, and regular security audits of your cluster components.</p>
+<h3 id="backup-and-disaster-recovery">Backup and Disaster Recovery</h3>
+<p>Having a solid backup strategy for both your cluster state and persistent data is crucial for business continuity in production environments.</p>
+<p>This post explores these key areas and provides practical recommendations based on real-world production experience.</p>
+
+</content>
+<p>
+  
+</p>
+
+  </main>
+  <footer><footer style="margin-top: 3rem; padding: 2rem 0; border-top: 1px dashed var(--text-color); opacity: 0.3; text-align: center;">
+  <div style="color: var(--text-color); opacity: 0.7; font-size: 0.9em;">
+    <p style="margin: 0.5rem 0;">
+      © 2025 <strong>Luiz Ferreira</strong>. All rights reserved.
+    </p>
+    <p style="margin: 0.5rem 0; font-style: italic;">
+      Made with <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" style="color: var(--link-color);">Hugo</a> 
+      and <a href="https://github.com/janraasch/hugo-bearblog/" target="_blank" rel="noopener noreferrer" style="color: var(--link-color);">Bear Blog theme</a>
+    </p>
+  </div>
+</footer> </footer>
+
+  
+</body>
+
+</html>

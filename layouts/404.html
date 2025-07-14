@@ -1,0 +1,61 @@
+{{ define "title" }}404 - Page Not Found{{ end }}
+
+{{ define "main" }}
+<div style="text-align: center; padding: 4rem 0; max-width: 600px; margin: 0 auto;">
+  <div style="font-size: 8rem; color: var(--link-color); font-weight: bold; line-height: 1; margin-bottom: 1rem;">
+    404
+  </div>
+  
+  <h1 style="font-size: 2rem; color: var(--heading-color); margin-bottom: 1rem;">
+    Page Not Found
+  </h1>
+  
+  <p style="font-size: 1.2rem; color: var(--text-color); margin-bottom: 2rem; line-height: 1.6;">
+    Oops! The page you're looking for doesn't exist or has been moved.
+  </p>
+  
+  <div style="margin-bottom: 3rem;">
+    <a href="{{ "" | relURL }}" style="
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: var(--link-color);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: opacity 0.3s ease;
+    " onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
+      ← Back to Home
+    </a>
+  </div>
+  
+  <div style="color: var(--text-color); opacity: 0.7; font-size: 0.9rem;">
+    <p>Here are some options that might help:</p>
+    <ul style="list-style: none; padding: 0; margin: 1rem 0;">
+      <li style="margin: 0.5rem 0;">
+        <a href="{{ "blog" | relURL }}" style="color: var(--link-color);">📝 View all posts</a>
+      </li>
+      <li style="margin: 0.5rem 0;">
+        <a href="{{ "about" | relURL }}" style="color: var(--link-color);">👨‍💻 About the author</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<style>
+@media (max-width: 600px) {
+  .not-found-container {
+    padding: 2rem 1rem;
+  }
+  
+  .not-found-container div[style*="font-size: 8rem"] {
+    font-size: 5rem !important;
+  }
+  
+  .not-found-container h1 {
+    font-size: 1.5rem !important;
+  }
+}
+</style>
+
+{{ end }} 

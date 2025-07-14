@@ -6,23 +6,34 @@
   {{ if $blogPosts }}
   <h2>Recent Posts</h2>
   <div class="blog-posts-preview">
-    {{ range first 5 $blogPosts }}
-    <article class="blog-post-preview">
+    {{ range $index, $post := first 5 $blogPosts }}
+    <article class="blog-post-preview" style="margin-bottom: 1.5rem; padding-bottom: 1rem;">
       <header>
         <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-        <time datetime='{{ .Date.Format "2006-01-02" }}'>
-          {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
-        </time>
+        <span style="color: var(--text-color); opacity: 0.8; font-size: 0.9em;">
+          <i>
+            <time datetime='{{ .Date.Format "2006-01-02" }}'>
+              {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
+            </time>
+          </i>
+          |
+          <i>written by Luiz Ferreira</i>
+        </span>
       </header>
       <div class="preview-content">
         {{ if .Summary }}
-          <p>{{ .Summary | truncate 200 }}</p>
+          <small style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; margin-bottom: 1rem;"><i>{{ .Summary | truncate 200 }}</i></small>
         {{ else }}
-          <p>{{ .Content | plainify | truncate 200 }}</p>
+          <small style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; margin-bottom: 1rem;"><i>{{ .Content | plainify | truncate 200 }}</i></small>
         {{ end }}
         <a href="{{ .Permalink }}" class="read-more">Read more →</a>
       </div>
     </article>
+    {{ if ne $index (sub (len (first 5 $blogPosts)) 1) }}
+    <div style="text-align: center; margin: 1rem 0; color: var(--text-color); opacity: 0.4; font-size: 1.2em;">
+      •••
+    </div>
+    {{ end }}
     {{ end }}
   </div>
   

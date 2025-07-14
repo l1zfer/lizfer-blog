@@ -1,0 +1,26 @@
+<style>
+/* Corrigir links em negrito para manter a cor azul */
+a strong,
+a b,
+strong a,
+b a {
+  color: var(--link-color) !important;
+}
+
+/* Manter a cor azul para links visitados em negrito */
+a:visited strong,
+a:visited b,
+strong a:visited,
+b a:visited {
+  color: var(--visited-color) !important;
+}
+
+/* Garantir que o hover funcione corretamente */
+a:hover strong,
+a:hover b,
+strong a:hover,
+b a:hover {
+  color: var(--link-color) !important;
+  text-decoration: underline;
+}
+</style> 

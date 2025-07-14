@@ -1,0 +1,23 @@
+{{ define "main" }}
+{{ if eq .Type "blog" }}{{ if not .Params.menu }}
+<h1 style="margin-bottom: 0.2rem;">{{ .Title }}</h1>
+<div style="font-size: 0.8em; color: var(--text-color); opacity: 0.8; margin-bottom: 1rem; line-height: 1.2;">
+  <i>
+    <time datetime='{{ .Date.Format "2006-01-02" }}'>
+      {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
+    </time>
+  </i>
+  |
+  <i>written by Luiz Ferreira</i>
+</div>
+<hr style="border: 0; border-top: 1px dashed var(--text-color); opacity: 0.3; margin-bottom: 2rem;">
+{{ end }}{{ end }}
+<content>
+  {{ .Content }}
+</content>
+<p>
+  {{ range (.GetTerms "tags") }}
+  <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
+  {{ end }}
+</p>
+{{ end }} 
