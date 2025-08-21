@@ -7,7 +7,7 @@ title = 'Building This Blog: A Journey from Hugo to AWS Amplify'
 
 Have you ever wanted to create a personal blog that's fast, secure, and easy to maintain? That's exactly what I set out to do with this blog. In this post, I'll walk you through my journey of building this blog using Hugo static site generator and hosting it on AWS Amplify. I'll share the technical decisions, challenges, and lessons learned along the way.
 
-## A Journey Through Blogging Platforms (2002-2024)
+### A Journey Through Blogging Platforms (2002-2024)
 
 Before diving into how I built this blog with Hugo, let me share my extensive journey through various blogging platforms. My blogging adventure started back in 2002, and I've experienced the evolution of blogging platforms firsthand:
 
@@ -31,7 +31,7 @@ Before diving into how I built this blog with Hugo, let me share my extensive jo
    - Content ownership concerns
    - Platform dependency
 
-## Why Hugo? A Modern Approach
+### Why Hugo? A Modern Approach
 
 After two decades of blogging experience, I chose Hugo for this blog for several compelling reasons:
 
@@ -64,7 +64,7 @@ After two decades of blogging experience, I chose Hugo for this blog for several
    - No plugin updates or compatibility issues
    - No security patches to apply
 
-## The Beginning: Setting Up Hugo
+### The Beginning: Setting Up Hugo
 
 Looking at the git history, this project started with a simple "Hello, World!" commit. Building on my previous blogging experience, I chose Hugo as my static site generator for several reasons:
 
@@ -82,7 +82,7 @@ cd lizfer-blog
 git init
 ```
 
-## Hugo Configuration
+### Hugo Configuration
 
 Before diving into the theme, I set up the basic Hugo configuration in `hugo.toml`. Here are some key configurations:
 
@@ -125,7 +125,7 @@ For better code highlighting and markdown rendering, I added specific markup con
     codeFences = true
 ```
 
-## Theme Selection and Customization
+### Theme Selection and Customization
 
 The journey of finding the right theme was interesting. I went through a few iterations before settling on the current design. I started with a pre-built theme but eventually decided to customize it heavily to match my vision. The current theme is based on [Hugo Bear Blog](https://github.com/janraasch/hugo-bearblog), which I chose for its:
 
@@ -134,7 +134,7 @@ The journey of finding the right theme was interesting. I went through a few ite
 - Focus on content
 - Dark mode support
 
-## AWS Amplify Integration
+### AWS Amplify Integration
 
 One of the key decisions was hosting the blog on AWS Amplify. The commit `46c2944 Added changes to Amplify` marks this integration. The setup process was straightforward through the AWS Console, where I:
 
@@ -162,7 +162,7 @@ The setup process involved:
 3. Configuring the build settings with a `amplify.yml` file
 4. Setting up branch-based deployments
 
-## Domain Setup
+### Domain Setup
 
 The final piece of the puzzle was setting up my custom domain `lizfer.social`. This involved several steps in AWS:
 
@@ -190,7 +190,7 @@ The final piece of the puzzle was setting up my custom domain `lizfer.social`. T
    - Automatic certificate renewal
    - Configured for both apex and www domains
 
-## Design Philosophy and User Experience
+### Design Philosophy and User Experience
 
 The visual design of this blog was carefully crafted to reflect a business card aesthetic, with intentional choices for every element:
 
@@ -238,7 +238,7 @@ The visual design of this blog was carefully crafted to reflect a business card 
    - Carefully selected font weights that maintain clarity in both modes
    - Warm color palette that's easier on the eyes during long reading sessions
 
-## The Final Touches
+### The Final Touches
 
 The last commit `e76ef60 Go-live final changes` included several optimizations:
 
@@ -247,7 +247,7 @@ The last commit `e76ef60 Go-live final changes` included several optimizations:
 3. Performance optimizations
 4. Content structure refinements
 
-## Technical Stack Overview
+### Technical Stack Overview
 
 Here's a complete overview of the technical stack:
 
@@ -259,7 +259,7 @@ Here's a complete overview of the technical stack:
 - **Content**: Markdown files
 - **Images**: Optimized and served through CloudFront CDN
 
-## Lessons Learned
+### Lessons Learned
 
 Throughout this journey, I learned several valuable lessons:
 
@@ -269,7 +269,7 @@ Throughout this journey, I learned several valuable lessons:
 4. **Automation Matters**: AWS Amplify's automated pipeline saves time
 5. **Performance Optimization**: Consider performance from day one
 
-## Conclusion
+### Conclusion
 
 Building this blog has been an exciting journey of learning and experimentation. The combination of Hugo and AWS Amplify provides a robust, scalable, and maintainable solution for a personal blog. The best part? It's all version controlled and automated, making future updates a breeze.
 
