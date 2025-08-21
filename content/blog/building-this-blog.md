@@ -1,11 +1,9 @@
----
-title: "Building This Blog: A Journey from Hugo to AWS Amplify"
-date: 2025-08-21
-description: "A detailed walkthrough of how I built this blog using Hugo, hosted it on AWS Amplify, and set up a custom domain - complete with technical decisions and lessons learned along the way."
-tags: ["hugo", "aws", "amplify", "blog"]
----
-
-# Building This Blog: A Journey from Hugo to AWS Amplify
++++
+date = '2025-08-21T10:00:00+01:00'
+draft = false
+type = 'blog'
+title = 'Building This Blog: A Journey from Hugo to AWS Amplify'
++++
 
 Have you ever wanted to create a personal blog that's fast, secure, and easy to maintain? That's exactly what I set out to do with this blog. In this post, I'll walk you through my journey of building this blog using Hugo static site generator and hosting it on AWS Amplify. I'll share the technical decisions, challenges, and lessons learned along the way.
 
