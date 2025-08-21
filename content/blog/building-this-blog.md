@@ -1,6 +1,6 @@
 ---
 title: "Building This Blog: A Journey from Hugo to AWS Amplify"
-date: 2024-03-26
+date: 2025-08-21
 description: "A detailed walkthrough of how I built this blog using Hugo, hosted it on AWS Amplify, and set up a custom domain - complete with technical decisions and lessons learned along the way."
 tags: ["hugo", "aws", "amplify", "blog"]
 ---
