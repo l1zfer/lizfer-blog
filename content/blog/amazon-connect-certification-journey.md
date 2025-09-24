@@ -3,6 +3,7 @@ date = '2025-09-24T15:00:00+01:00'
 draft = false
 type = 'blog'
 title = 'My Amazon Connect Developer Certification Journey'
+slug = 'amazon-connect-certification-journey'
 +++
 
 Back in mid-2000s, in São Paulo, I landed my first job as a call-center agent for a job-listing website. Throughout the next decade, I worked in many different positions (agent, SME, queue admin, supervisor), what gave me a comprehensive understanding of how customer service should be provided. Even though I changed paths at some point, I always brought my people skills acquired from those days to other tables I worked.
@@ -94,11 +95,9 @@ This journey taught me several valuable lessons:
 
 ### Conclusion
 
-The journey from Hannover to Barcelona, through intensive workshops, hands-on projects, and rigorous certification preparation, has been transformative. It's not just about earning a certification - it's about mastering a platform that's reshaping how businesses interact with their customers.
+The journey from Hannover to Barcelona, through intensive workshops, hands-on projects, and rigorous certification preparation, has been transformative. Amazon Connect makes sense to me - solves many issues that "the old me" suffered while working in customer support. Glad to have participated and excited for what we will build.
 
-For organizations in the Iberian Peninsula looking to modernize their contact centers or implement sophisticated customer engagement solutions, tecRacer now has the certified expertise to guide you through this transformation.
-
-The future of customer engagement is here, and it's powered by Amazon Connect. I'm proud to be part of this journey and excited about the innovations we'll build together.
+For organizations in Portugal or Spain looking to modernize their contact centers or implement sophisticated customer engagement solutions, tecRacer now has the certified expertise to guide you through this transformation.
 
 ---
 
