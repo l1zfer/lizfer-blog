@@ -29,7 +29,7 @@ What made this certification particularly challenging was its practical focus. I
 
 My preparation involved multiple learning channels:
 
-1. **Official AWS Documentation**: The AWS Skill Builder has (a specific learning and badge plan)[https://skillbuilder.aws/learning-plan/6YW2QYUBKS/amazon-connect-developer-learning--badge-plan/NEWQZB4HAQ] for the Developer certification
+1. **Official AWS Documentation**: The AWS Skill Builder has [a specific learning and badge plan](https://skillbuilder.aws/learning-plan/6YW2QYUBKS/amazon-connect-developer-learning--badge-plan/NEWQZB4HAQ) for the Developer certification
 2. **Hands-on Labs**: Nothing beats practical experience
 3. **Workshop Materials**: Detailed notes from Hannover and Barcelona sessions
 4. **Practice Exams**: Testing knowledge and identifying gaps
