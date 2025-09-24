@@ -1,5 +1,5 @@
 +++
-date = '2024-09-24T15:00:00+01:00'
+date = '2025-09-24T15:00:00+01:00'
 draft = false
 type = 'blog'
 title = 'My Amazon Connect Developer Certification Journey'
